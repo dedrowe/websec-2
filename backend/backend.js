@@ -44,7 +44,7 @@ app.get('/api/rasp', async (req, res) => {
         } else if (staffId !== undefined && staffId != null && staffId !== 'null') {
             data = await getTeacherSchedule(staffId, weekNumber);
         } else {
-            return res.status(400).json({error: 'BAD REQUEST'});
+            return res.status(400).json({error: 'Неверные параметры запроса'});
         }
 
         res.send(data);
