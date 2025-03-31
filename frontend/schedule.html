@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/axios/axios.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div id="container" class="container-fluid m-0">
+            <div id="title" class="fs-3 fw-bold"></div>
+            <div id="table-legend" class="flex-row flex-wrap gap-3" style="display: none;">
+                <div class="lecture">Лекция</div>
+                <div class="practice">Практика</div>
+                <div class="lab">Лабораторная</div>
+                <div class="exam">Экзамен</div>
+                <div class="test">Зачет</div>
+                <div class="consultation">Консультация</div>
+                <div class="other">Другое</div>
+            </div>
+            <div id="table-container">
+                <div id="weeks-container" class="row justify-content-between"></div>
+                <table id="schedule-table" class="table table-bordered">
+                    <thead id="schedule-table-head"></thead>
+                    <tbody id="schedule-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(async function() {
+        const url = new URL(window.location.href);
+        const groupId = url.searchParams.get('groupId');
+        const staffId = url.searchParams.get('staffId');
+        if (groupId !== undefined && groupId !== null && groupId !== 'null') {
+        await renderGroupSchedule(groupId, url.searchParams.get('selectedWeek'));
+        } else {
+            await renderTeacherSchedule(staffId, url.searchParams.get('selectedWeek'));
+        }
+        $('#table-legend').css('display', 'flex');
+    });
+</script>

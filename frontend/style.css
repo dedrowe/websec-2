@@ -1,0 +1,34 @@
+.lecture {
+    font-weight: bold;
+    color: #16A086;
+}
+
+.practice {
+    font-weight: bold;
+    color: #64B5FF;
+}
+
+.lab {
+    font-weight: bold;
+    color: #DF5FFF;
+}
+
+.exam {
+    font-weight: bold;
+    color: #0B40B3;
+}
+
+.test {
+    font-weight: bold;
+    color: #FFDE7B;
+}
+
+.consultation {
+    font-weight: bold;
+    color: #0BB4BF;
+}
+
+.other {
+    font-weight: bold;
+    color: #F19236;
+}

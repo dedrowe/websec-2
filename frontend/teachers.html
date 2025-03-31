@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/axios/axios.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div id="container" class="container m-2">
+            <div class="row fs-3 fw-bold">Поиск преподавателей</div>
+            <input id="teacher-select" type="text"/>
+            <button class="btn btn-primary" onclick="searchTeachers($('#teacher-select').val())">Поиск</button>
+            <div class="row">Введите 3 или более символов</div>
+            <div id="staff"></div>
+        </div>
+    </body>
+</html>

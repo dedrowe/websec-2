@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/axios/axios.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div id="container" class="container-fluid m-0">
+            <div id="faculty" class="row m-1 fs-3 fw-bold"></div>
+            <div id="courses" class="row m-1"></div>
+            <div class="row m-1 fs-3 fw-bold">Группы</div>
+            <div id="groups" class="row m-1 col-sm-12 col-md-6"></div>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(function() {
+        const url = new URL(window.location.href);
+        getGroups(url.searchParams.get('facultyId'), url.searchParams.get('course'));
+    });
+</script>
